@@ -38,6 +38,11 @@ def parse_value(value, type):
             return 1
         elif value == 'false':
             return 0
+        # workaround for HmIP-SWDM:
+        elif value == '0':
+            return 0
+        elif value == '1':
+            return 1
         else:
             raise ValueError("Cannot parse '{}' to boolean value".format(value))
     else:
