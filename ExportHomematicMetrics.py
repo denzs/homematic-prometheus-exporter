@@ -64,8 +64,8 @@ def collect_metrics_from_homematic():
                 metric = MAP_METRICS.get(data_point_type)
                 if metric is not None:
                     value = parse_value(data_point.get('value'), metric.get('type'))
-                    g = GaugeMetricFamily('homematic_' + metric['name'], "", labels=['room'])
-                    g.add_metric([room_name], value, data_point.attrib.get('timestamp'))
+                    g = GaugeMetricFamily('homematic_' + metric['name'], "", labels=['mapped_name'])
+                    g.add_metric([room_name], value )
                     yield g
 
 
