@@ -7,9 +7,28 @@ from prometheus_client import start_http_server, PLATFORM_COLLECTOR, PROCESS_COL
 from prometheus_client.core import GaugeMetricFamily, REGISTRY
 
 MAP_METRICS = {
+    '0.UNREACH': {'name':'unreachable', 'type':'boolean'},
+    '0.STICKY_UNREACH': {'name':'sticky_unreachable', 'type':'boolean'},
+    '0.CONFIG_PENDING': {'name':'config_pending', 'type':'boolean'},
+    '0.LOWBAT': {'name':'lowbat', 'type':'boolean'},
+    '0.RSSI_DEVICE': {'name':'rssi_device'},
+    '0.RSSI_PEER': {'name':'rssi_peer'},
+    '0.DEVICE_IN_BOOTLOADER': {'name':'device_in_bootloader', 'type':'boolean'},
+    '0.UPDATE_PENDING': {'name':'update_pending', 'type':'boolean'},
     '1.ACTUAL_TEMPERATURE': {'name': 'current_temperature_celsius'},
+    '1.TEMPERATURE': {'name': 'current_temperature_celsius'},
     '1.SET_POINT_TEMPERATURE': {'name': 'set_temperature_celsius'},
+    '1.STATE': {'name':'state', 'type':'boolean'},
     '1.HUMIDITY': {'name': 'humidity_percent'},
+    '2.ENERGY_COUNTER': {'name':'energy_counter'},
+    '2.POWER': {'name':'power'},
+    '2.CURRENT': {'name':'current'},
+    '2.VOLTAGE': {'name':'voltage'},
+    '2.FREQUENCY': {'name':'frequency'},
+    '4.ACTUAL_TEMPERATURE': {'name': 'current_temperature_celsius'},
+    '4.SET_TEMPERATURE': {'name': 'set_temperature_celsius'},
+    '4.VALVE_STATE': {'name':'valve_state'},
+    '4.BATTERY_STATE': {'name':'battery_state'},
     '10.STATE': {'name': 'heating_valve_open', 'type':'boolean'}
 }
 
